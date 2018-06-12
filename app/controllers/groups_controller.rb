@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user! , only: [:new]
+
   def index
       @groups = Group.all
   end
@@ -46,6 +48,4 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:title, :description)
   end
   
-
-
 end
