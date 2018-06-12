@@ -4,4 +4,6 @@ class WelcomeController < ApplicationController
 	  flash[:alert] ="!!!!!"
 	  flash[:warning] = "???????????????"
       end	  
+
+
 end
