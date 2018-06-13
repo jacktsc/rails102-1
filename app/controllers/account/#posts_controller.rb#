@@ -1,0 +1,16 @@
+class Account::PostsController < ApplicationController
+  before_action :authenticate_user!
+  def index
+    @posts = current_user.posts
+  end
+   
+  def destory
+    @group = Group.find(params[:id])
+    @group.destory
+    flash[:alert] = "Group deleted"
+    redirect_to groups_path       
+  end 
+  
+ 
+  
+end
